@@ -1,24 +1,3 @@
-;; Already There :P
-(put 'narrow-to-region 'disabled nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(challenger-deep))
- '(custom-safe-themes
-   '("961ab0e773a65a40e1d79cea9dd2d2a1b249040c1e8c0051e4fbd0b79bf33ca4"
-     "889584526e36775884a0018e70cafcd7b4c1adca1232c97653676938afb5474c"
-     default))
- '(package-selected-packages '(eat magit pink-bliss-uwu-theme))
- '(warning-suppress-types '((use-package) (use-package) (use-package) (use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 ;; Stop startup message
 (setq inhibit-splash-screen t)
 
@@ -69,3 +48,31 @@
                               "-Command"
                               (format "Start-Process '%s' -Verb RunAs" cmd))))
     (save-buffers-kill-emacs)))
+
+;;Intializing MELPA because for some reason package manager is busted
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Already There :P
+(put 'narrow-to-region 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes
+   '("e9d47d6d41e42a8313c81995a60b2af6588e9f01a1cf19ca42669a7ffd5c2fde"
+     "337cde22c241442705f961a653fdcd47ae65323db2e8ac85909ca9e6d18a71cb"
+     "961ab0e773a65a40e1d79cea9dd2d2a1b249040c1e8c0051e4fbd0b79bf33ca4"
+     "889584526e36775884a0018e70cafcd7b4c1adca1232c97653676938afb5474c"
+     default))
+ '(package-selected-packages '(eat magit pink-bliss-uwu-theme sakura-theme))
+ '(warning-suppress-types '((use-package) (use-package) (use-package) (use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
