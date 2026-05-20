@@ -27,6 +27,8 @@
 ;;Starts org mode in auto-fill
 ;;Sets auto-fill to 100 (the way God intended)
 ;;Allows alpahabetical lists in org mode
+;;Allows export to .md that people love for some reason
+;;Allows cycling through plain list items
 (require 'org)
 (require 'org-tempo)
 (setq org-hide-emphasis-markers t)
@@ -36,6 +38,8 @@
 	  (lambda ()
 	    (setq fill-column 100)))
 (setq org-list-allow-alphabetical t)
+(require 'ox-md)
+(setq org-cycle-include-plain-lists t)
 
 ;;Function that should work to restart Emacs when it is started from the taskbar instead of a CLI console
 ;;The lambda part runs it elevated to allow for admin privileges
